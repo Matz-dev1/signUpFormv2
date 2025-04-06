@@ -1,4 +1,4 @@
-function ButtonNext({ title }) {
+function ButtonNext({ text }) {
   return (
     <div>
       <div className="flex justify-end">
@@ -7,7 +7,7 @@ function ButtonNext({ title }) {
             type="submit"
             className="rounded-sm bg-[#1e126c] p-2 px-2 text-[16px] text-white cursor-pointer shadow-md"
           >
-            {title}
+            {text}
           </button>
         </div>
       </div>

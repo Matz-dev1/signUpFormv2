@@ -1,21 +1,21 @@
 "use client";
-import { useState, useEffect } from "react";
-import FirstPage from "./firstPage";
-import SecondPage from "./secondPage";
+import { useState } from "react";
+import FirstPage from "./clientInfoPage";
+import SecondPage from "./subscrbtionTypePage";
 import Sidebar from "./sidebar";
-import ThirdPage from "./thirdPage";
-import FourthPage from "./fourthPage";
-import ThankYouPage from "./tyMessage";
+import ThirdPage from "./addOnsPage";
+import FourthPage from "./summaryPage";
+import ThankYouPage from "./thankYouMessage";
 
 function MainPage() {
   const [currentPage, setCurrentPage] = useState(0);
   const [formValues, setFormValues] = useState({
     name: "",
     email: "",
-    phoneNum: "",
+    phoneNumber: "",
   });
   const [isToggled, setIsToggled] = useState(0);
-  const [currentSub, setCurrentSub] = useState({});
+  const [currentSubscribtion, setCurrentSubscribtion] = useState({});
   const [isChosen, setIsChosen] = useState([]);
 
   const goNext = () => setCurrentPage((prev) => prev + 1);
@@ -41,8 +41,8 @@ function MainPage() {
               onBack={goBack}
               isToggled={isToggled}
               setIsToggled={setIsToggled}
-              currentSub={currentSub}
-              setCurrentSub={setCurrentSub}
+              currentSubscribtion={currentSubscribtion}
+              setCurrentSubscribtion={setCurrentSubscribtion}
               title="Next step"
             />
           )}
@@ -61,7 +61,7 @@ function MainPage() {
               onNext={goNext}
               onBack={goBack}
               title="Confirm"
-              currentSub={currentSub}
+              currentSubscribtion={currentSubscribtion}
               isChosen={isChosen}
               isToggled={isToggled}
             />

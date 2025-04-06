@@ -1,13 +1,6 @@
 import ButtonNext from "./buttonNext";
 import ButtonBack from "./buttonBack";
-function ThirdPage({
-  isToggled,
-  isChosen,
-  setIsChosen,
-  onBack,
-  title,
-  onNext,
-}) {
+function ThirdPage({ isToggled, isChosen, setIsChosen, onBack, text, onNext }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onNext();
@@ -132,7 +125,7 @@ function ThirdPage({
         <div className="flex flex-row justify-between">
           <ButtonBack onBack={onBack} />
 
-          <ButtonNext title={title} />
+          <ButtonNext text={text} />
         </div>
       </form>
     </div>

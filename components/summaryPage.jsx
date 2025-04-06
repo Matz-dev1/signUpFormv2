@@ -4,8 +4,8 @@ import ButtonNext from "./buttonNext";
 function FourthPage({
   onBack,
   onNext,
-  title,
-  currentSub,
+  text,
+  currentSubscribtion,
   isChosen,
   isToggled,
 }) {
@@ -35,11 +35,11 @@ function FourthPage({
         <div className="flex flex-col gap-6 bg-teal-200 p-4 rounded-md">
           <div className="flex flex-row justify-between w-full">
             <div className="text-blue-800 font-bold flex flex-col">
-              <p className="text-[18px]">{currentSub.type}</p>
+              <p className="text-[18px]">{currentSubscribtion.type}</p>
               <p>({isToggled === 0 ? "monthly" : "yearly"})</p>
             </div>
             <div className="flex items-center">
-              {currentSub.price[isToggled]}
+              {currentSubscribtion.price[isToggled]}
             </div>
           </div>
           <div className="w-full border-b-2 border-gray-400"></div>
@@ -61,7 +61,7 @@ function FourthPage({
         <div className="flex flex-row justify-between">
           <ButtonBack onBack={onBack} />
 
-          <ButtonNext title={title} />
+          <ButtonNext text={text} />
         </div>
       </form>
     </div>

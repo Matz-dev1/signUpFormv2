@@ -11,12 +11,12 @@ function SecondPage({
   onBack,
   isToggled,
   setIsToggled,
-  currentSub,
-  setCurrentSub,
-  title,
+  currentSubscribtion,
+  setCurrentSubscribtion,
+  text,
 }) {
-  const subChoice = (option) => {
-    setCurrentSub(data[option]);
+  const subscribtionChoice = (option) => {
+    setCurrentSubscribtion(data[option]);
   };
 
   const toggleSwitch = () => {
@@ -77,9 +77,9 @@ function SecondPage({
                 <button
                   key={type}
                   type="button"
-                  onClick={() => subChoice(option)}
+                  onClick={() => subscribtionChoice(option)}
                   className={`h-40 w-35  rounded-md cursor-pointer hover:border-blue-700 ${
-                    option === currentSub.option
+                    option === currentSubscribtion.option
                       ? "border-2 border-blue-500 bg-gray-100"
                       : "border-2 border-gray-400"
                   }`}
@@ -139,7 +139,7 @@ function SecondPage({
                   type="button"
                   onClick={() => subChoice(option)}
                   className={`h-40 w-35  rounded-md cursor-pointer hover:border-blue-700 ${
-                    option === currentSub.option
+                    option === currentSubscribtion.option
                       ? "border-2 border-blue-500 bg-gray-100"
                       : "border-2 border-gray-400"
                   }`}
@@ -194,7 +194,7 @@ function SecondPage({
         <div className="flex flex-row justify-between">
           <ButtonBack onBack={onBack} />
 
-          <ButtonNext title={title} />
+          <ButtonNext text={text} />
         </div>
       </form>
     </div>

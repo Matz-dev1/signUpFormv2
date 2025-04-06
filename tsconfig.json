@@ -28,7 +28,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "components/sidebar.jsx",
-    "components/firstPage.jsx"
+    "components/clientInfoPage.jsx"
   ],
   "exclude": ["node_modules"]
 }

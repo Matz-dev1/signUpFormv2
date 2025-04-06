@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ButtonNext from "./buttonNext";
 
-function FirstPage({ onNext, formValues, setFormValues, title }) {
+function FirstPage({ onNext, formValues, setFormValues, text }) {
   const [errorMessage, setErrorMessage] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
@@ -35,10 +35,10 @@ function FirstPage({ onNext, formValues, setFormValues, title }) {
     } else if (!regex.test(values.email)) {
       errors.email = "Your email is invalid, try again.";
     }
-    if (!values.phoneNum) {
-      errors.phoneNum = "Please provide a number.";
-    } else if (!numRegex.test(values.phoneNum)) {
-      errors.phoneNum =
+    if (!values.phoneNumber) {
+      errors.phoneNumber = "Please provide a number.";
+    } else if (!numRegex.test(values.phoneNumber)) {
+      errors.phoneNumber =
         "Invalid number, please provide a prefix followed by 9 digits.";
     }
     return errors;
@@ -120,10 +120,10 @@ function FirstPage({ onNext, formValues, setFormValues, title }) {
               id="phoneNum"
               placeholder="e.g. +1 234 567 890"
               className={`border-2 border-gray-300 focus:border-blue-700 focus:outline-none w-full h-10 pl-2 rounded-sm ${
-                errorMessage.phoneNum ? "border-red-900" : ""
+                errorMessage.phoneNumber ? "border-red-900" : ""
               }`}
               onChange={handleChange}
-              value={formValues.phoneNum}
+              value={formValues.phoneNumber}
             />
             {errorMessage.phoneNum && (
               <span className="text-red-900 font-bold">
@@ -132,7 +132,7 @@ function FirstPage({ onNext, formValues, setFormValues, title }) {
             )}
           </div>
         </div>
-        <ButtonNext title={title} />
+        <ButtonNext text={text} />
       </form>
     </div>
   );
