@@ -8,7 +8,7 @@ function FinalMessage() {
       <p className="text-gray-400">
         Thanks for confirming your subscription! We hope you have fun using our
         platform. If you ever need support, please feel free to email us at
-        support@loremgaming.com.
+        <a href="mailto: support@loremgaming.com">support@loremgaming.com</a>.
       </p>
     </div>
   );
