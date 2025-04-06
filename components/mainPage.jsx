@@ -32,7 +32,7 @@ function MainPage() {
               onNext={goNext}
               formValues={formValues}
               setFormValues={setFormValues}
-              title="Next step"
+              text="Next step"
             />
           )}
           {currentPage === 1 && (
@@ -43,7 +43,7 @@ function MainPage() {
               setIsToggled={setIsToggled}
               currentSubscribtion={currentSubscribtion}
               setCurrentSubscribtion={setCurrentSubscribtion}
-              title="Next step"
+              text="Next step"
             />
           )}
           {currentPage === 2 && (
@@ -53,14 +53,14 @@ function MainPage() {
               isToggled={isToggled}
               isChosen={isChosen}
               setIsChosen={setIsChosen}
-              title="Next step"
+              text="Next step"
             />
           )}
           {currentPage === 3 && (
             <FourthPage
               onNext={goNext}
               onBack={goBack}
-              title="Confirm"
+              text="Confirm"
               currentSubscribtion={currentSubscribtion}
               isChosen={isChosen}
               isToggled={isToggled}

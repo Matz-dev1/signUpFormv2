@@ -45,7 +45,10 @@ function FourthPage({
           <div className="w-full border-b-2 border-gray-400"></div>
           <div>
             {isChosen.map((item) => (
-              <div className="flex flex-row w-full justify-between">
+              <div
+                key={item.id}
+                className="flex flex-row w-full justify-between"
+              >
                 <p>{item.title}</p>
                 <p>{item.price[isToggled]}</p>
               </div>
