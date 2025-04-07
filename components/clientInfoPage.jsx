@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ButtonNext from "./buttonNext";
 
-function FirstPage({ onNext, formValues, setFormValues, text }) {
+function clientInfoPage({ onNext, formValues, setFormValues, text }) {
   const [errorMessage, setErrorMessage] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
 
@@ -137,4 +137,4 @@ function FirstPage({ onNext, formValues, setFormValues, text }) {
     </div>
   );
 }
-export default FirstPage;
+export default clientInfoPage;

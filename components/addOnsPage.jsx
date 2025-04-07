@@ -1,12 +1,19 @@
 import ButtonNext from "./buttonNext";
 import ButtonBack from "./buttonBack";
-function ThirdPage({ isToggled, isChosen, setIsChosen, onBack, text, onNext }) {
+function addOnsPage({
+  isToggled,
+  chosenAddOns,
+  setChosenAddOns,
+  onBack,
+  text,
+  onNext,
+}) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onNext();
   };
   const addOns = (id) => {
-    setIsChosen((prev) => {
+    setChosenAddOns((prev) => {
       const selectedAddOn = checkboxData.find((item) => item.id === id);
       if (prev.some((item) => item.id === selectedAddOn.id)) {
         return prev.filter((item) => item.id !== selectedAddOn.id);
@@ -64,7 +71,7 @@ function ThirdPage({ isToggled, isChosen, setIsChosen, onBack, text, onNext }) {
                   key={id}
                   onClick={() => addOns(id)}
                   className={`flex flex-row h-20 w-full justify-between rounded-md cursor-pointer hover:border-blue-700 ${
-                    isChosen.some((item) => item.id === id)
+                    chosenAddOns.some((item) => item.id === id)
                       ? "border-2 border-blue-500 bg-blue-200"
                       : "border-2 border-gray-400"
                   }`}
@@ -73,7 +80,7 @@ function ThirdPage({ isToggled, isChosen, setIsChosen, onBack, text, onNext }) {
                     <input
                       type="checkbox"
                       className="w-4 h-4 flex my-auto"
-                      checked={isChosen.some((item) => item.id === id)}
+                      checked={chosenAddOns.some((item) => item.id === id)}
                       onChange={() => addOns(id)}
                     />
                     <div className="flex flex-col my-auto">
@@ -97,7 +104,7 @@ function ThirdPage({ isToggled, isChosen, setIsChosen, onBack, text, onNext }) {
                   key={id}
                   onClick={() => addOns(id)}
                   className={`flex flex-row h-20 w-full justify-between rounded-md cursor-pointer hover:border-blue-700 ${
-                    isChosen.some((item) => item.id === id)
+                    chosenAddOns.some((item) => item.id === id)
                       ? "border-2 border-blue-500 bg-blue-200"
                       : "border-2 border-gray-400"
                   }`}
@@ -106,7 +113,7 @@ function ThirdPage({ isToggled, isChosen, setIsChosen, onBack, text, onNext }) {
                     <input
                       type="checkbox"
                       className="w-4 h-4 flex my-auto"
-                      checked={isChosen.some((item) => item.id === id)}
+                      checked={chosenAddOns.some((item) => item.id === id)}
                       onChange={() => addOns(id)}
                     />
                     <div className="flex flex-col my-auto">
@@ -131,4 +138,4 @@ function ThirdPage({ isToggled, isChosen, setIsChosen, onBack, text, onNext }) {
     </div>
   );
 }
-export default ThirdPage;
+export default addOnsPage;

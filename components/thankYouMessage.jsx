@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ThankYouIcon from "@/public/images/icon-thank-you.svg";
-function FinalMessage() {
+function thankYouMessage() {
   return (
     <div className="flex flex-col h-full gap-4 justify-center text-center items-center">
       <Image src={ThankYouIcon} alt="thank you icon" />
@@ -13,4 +13,4 @@ function FinalMessage() {
     </div>
   );
 }
-export default FinalMessage;
+export default thankYouMessage;

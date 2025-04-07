@@ -1,19 +1,19 @@
 import ButtonBack from "./buttonBack";
 import ButtonNext from "./buttonNext";
 
-function FourthPage({
+function summaryPage({
   onBack,
   onNext,
   text,
   currentSubscription,
-  isChosen,
+  chosenAddOns,
   isToggled,
 }) {
   const parsePrice = (str) => parseInt(str.replace(/\D/g, ""));
 
-  const total = isChosen.reduce(
+  const total = chosenAddOns.reduce(
     (sum, item) => sum + parsePrice(item.price[isToggled]),
-    parsePrice(currentSub?.price[isToggled] || "0")
+    parsePrice(currentSubscription?.price[isToggled] || "0")
   );
 
   const handleSubmit = (e) => {
@@ -35,7 +35,7 @@ function FourthPage({
         <div className="flex flex-col gap-6 bg-teal-200 p-4 rounded-md">
           <div className="flex flex-row justify-between w-full">
             <div className="text-blue-800 font-bold flex flex-col">
-              <p className="text-[18px]">{currentSubscribtion.type}</p>
+              <p className="text-[18px]">{currentSubscription.type}</p>
               <p>({isToggled === 0 ? "monthly" : "yearly"})</p>
             </div>
             <div className="flex items-center">
@@ -44,7 +44,7 @@ function FourthPage({
           </div>
           <div className="w-full border-b-2 border-gray-400"></div>
           <div>
-            {isChosen.map((item) => (
+            {chosenAddOns.map((item) => (
               <div
                 key={item.id}
                 className="flex flex-row w-full justify-between"
@@ -70,4 +70,4 @@ function FourthPage({
     </div>
   );
 }
-export default FourthPage;
+export default summaryPage;

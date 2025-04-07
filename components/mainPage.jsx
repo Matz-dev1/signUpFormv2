@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
-import FirstPage from "./clientInfoPage";
-import SecondPage from "./subscribtionTypePage";
+import ClientInfoPage from "./clientInfoPage";
+import SubscriptionTypePage from "./subscriptionTypePage";
 import Sidebar from "./sidebar";
-import ThirdPage from "./addOnsPage";
-import FourthPage from "./summaryPage";
-import ThankYouPage from "./thankYouMessage";
+import AddOnsPage from "./addOnsPage";
+import SummaryPage from "./summaryPage";
+import ThankYouMessage from "./thankYouMessage";
 
 function MainPage() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -16,7 +16,7 @@ function MainPage() {
   });
   const [isToggled, setIsToggled] = useState(0);
   const [currentSubscription, setCurrentSubscription] = useState({});
-  const [isChosen, setIsChosen] = useState([]);
+  const [chosenAddOns, setChosenAddOns] = useState([]);
 
   const goNext = () => setCurrentPage((prev) => prev + 1);
   const goBack = () => setCurrentPage((prev) => prev - 1);
@@ -28,7 +28,7 @@ function MainPage() {
         </div>
         <div className="flex flex-col w-[70%] justify-start text-start px-20 py-10 gap-10">
           {currentPage === 0 && (
-            <FirstPage
+            <ClientInfoPage
               onNext={goNext}
               formValues={formValues}
               setFormValues={setFormValues}
@@ -36,7 +36,7 @@ function MainPage() {
             />
           )}
           {currentPage === 1 && (
-            <SecondPage
+            <SubscriptionTypePage
               onNext={goNext}
               onBack={goBack}
               isToggled={isToggled}
@@ -47,26 +47,26 @@ function MainPage() {
             />
           )}
           {currentPage === 2 && (
-            <ThirdPage
+            <AddOnsPage
               onNext={goNext}
               onBack={goBack}
               isToggled={isToggled}
-              isChosen={isChosen}
-              setIsChosen={setIsChosen}
+              chosenAddOns={chosenAddOns}
+              setChosenAddOns={setChosenAddOns}
               text="Next step"
             />
           )}
           {currentPage === 3 && (
-            <FourthPage
+            <SummaryPage
               onNext={goNext}
               onBack={goBack}
               text="Confirm"
               currentSubscription={currentSubscription}
-              isChosen={isChosen}
+              chosenAddOns={chosenAddOns}
               isToggled={isToggled}
             />
           )}
-          {currentPage === 4 && <ThankYouPage />}
+          {currentPage === 4 && <ThankYouMessage />}
         </div>
       </div>
     </div>

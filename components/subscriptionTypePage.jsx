@@ -6,7 +6,7 @@ import iconPro from "@/public/images/icon-pro.svg";
 import ButtonNext from "./buttonNext";
 import ButtonBack from "./buttonBack";
 
-function SecondPage({
+function subscriptionTypePage({
   onNext,
   onBack,
   isToggled,
@@ -77,9 +77,9 @@ function SecondPage({
                 <button
                   key={type}
                   type="button"
-                  onClick={() => subscritpionChoice(option)}
+                  onClick={() => subscriptionChoice(option)}
                   className={`h-40 w-35  rounded-md cursor-pointer hover:border-blue-700 ${
-                    option === currentSubscribtion.option
+                    option === currentSubscription.option
                       ? "border-2 border-blue-500 bg-gray-100"
                       : "border-2 border-gray-400"
                   }`}
@@ -200,4 +200,4 @@ function SecondPage({
     </div>
   );
 }
-export default SecondPage;
+export default subscriptionTypePage;
