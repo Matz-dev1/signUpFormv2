@@ -5,7 +5,7 @@ function FourthPage({
   onBack,
   onNext,
   text,
-  currentSubscribtion,
+  currentSubscription,
   isChosen,
   isToggled,
 }) {
@@ -39,7 +39,7 @@ function FourthPage({
               <p>({isToggled === 0 ? "monthly" : "yearly"})</p>
             </div>
             <div className="flex items-center">
-              {currentSubscribtion.price[isToggled]}
+              {currentSubscription.price[isToggled]}
             </div>
           </div>
           <div className="w-full border-b-2 border-gray-400"></div>

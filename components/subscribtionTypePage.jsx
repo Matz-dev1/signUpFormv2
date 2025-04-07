@@ -11,12 +11,12 @@ function SecondPage({
   onBack,
   isToggled,
   setIsToggled,
-  currentSubscribtion,
-  setCurrentSubscribtion,
+  currentSubscription,
+  setCurrentSubscription,
   text,
 }) {
-  const subscribtionChoice = (option) => {
-    setCurrentSubscribtion(data[option]);
+  const subscriptionChoice = (option) => {
+    setCurrentSubscription(data[option]);
   };
 
   const toggleSwitch = () => {
@@ -25,7 +25,7 @@ function SecondPage({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (currentSub !== null) {
+    if (currentSubscription !== null) {
       onNext();
     }
   };
@@ -77,7 +77,7 @@ function SecondPage({
                 <button
                   key={type}
                   type="button"
-                  onClick={() => subscribtionChoice(option)}
+                  onClick={() => subscritpionChoice(option)}
                   className={`h-40 w-35  rounded-md cursor-pointer hover:border-blue-700 ${
                     option === currentSubscribtion.option
                       ? "border-2 border-blue-500 bg-gray-100"
@@ -137,9 +137,9 @@ function SecondPage({
                 <button
                   key={type}
                   type="button"
-                  onClick={() => subChoice(option)}
+                  onClick={() => subscriptionChoice(option)}
                   className={`h-40 w-35  rounded-md cursor-pointer hover:border-blue-700 ${
-                    option === currentSubscribtion.option
+                    option === currentSubscription.option
                       ? "border-2 border-blue-500 bg-gray-100"
                       : "border-2 border-gray-400"
                   }`}

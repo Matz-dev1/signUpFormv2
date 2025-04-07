@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import FirstPage from "./clientInfoPage";
-import SecondPage from "./subscrbtionTypePage";
+import SecondPage from "./subscribtionTypePage";
 import Sidebar from "./sidebar";
 import ThirdPage from "./addOnsPage";
 import FourthPage from "./summaryPage";
@@ -15,7 +15,7 @@ function MainPage() {
     phoneNumber: "",
   });
   const [isToggled, setIsToggled] = useState(0);
-  const [currentSubscribtion, setCurrentSubscribtion] = useState({});
+  const [currentSubscription, setCurrentSubscription] = useState({});
   const [isChosen, setIsChosen] = useState([]);
 
   const goNext = () => setCurrentPage((prev) => prev + 1);
@@ -41,8 +41,8 @@ function MainPage() {
               onBack={goBack}
               isToggled={isToggled}
               setIsToggled={setIsToggled}
-              currentSubscribtion={currentSubscribtion}
-              setCurrentSubscribtion={setCurrentSubscribtion}
+              currentSubscription={currentSubscription}
+              setCurrentSubscription={setCurrentSubscription}
               text="Next step"
             />
           )}
@@ -61,7 +61,7 @@ function MainPage() {
               onNext={goNext}
               onBack={goBack}
               text="Confirm"
-              currentSubscribtion={currentSubscribtion}
+              currentSubscription={currentSubscription}
               isChosen={isChosen}
               isToggled={isToggled}
             />
