@@ -34,11 +34,10 @@ function Sidebar({ id }) {
     },
   ];
   return (
-    <div className="flex flex-col justify-start pt-10 pl-6 gap-6  w-full bg-[url('/images/bg-sidebar-desktop.svg')] h-full bg-no-repeat bg-center overflow-hidden rounded-lg">
+    <div className="flex flex-col justify-start pt-10 pl-6 gap-6  w-full bg-[url('/images/bg-sidebar-desktop.svg')] h-full bg-no-repeat bg-center bg-cover overflow-hidden rounded-lg">
       {data.map((el) => (
-        <div className="flex flex-row gap-6">
+        <div className="flex flex-row gap-6" key={el.id}>
           <div
-            key={el.id}
             id={el.id}
             className={`flex rounded-full text-[20px] bg-none border-2 w-[50px] h-[50px] items-center justify-center border-white  ${
               el.id === id ? "bg-white text-black" : "text-white"

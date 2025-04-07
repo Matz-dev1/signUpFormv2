@@ -110,14 +110,14 @@ function FirstPage({ onNext, formValues, setFormValues, text }) {
           <div className="flex flex-col gap-1 text-[14px]">
             <label
               className="block text-[#2b1d8a] font-bold text-[14px]"
-              htmlFor="phoneNum"
+              htmlFor="phoneNumer"
             >
               Phone Number
             </label>
             <input
               type="text"
-              name="phoneNum"
-              id="phoneNum"
+              name="phoneNumber"
+              id="phoneNumber"
               placeholder="e.g. +1 234 567 890"
               className={`border-2 border-gray-300 focus:border-blue-700 focus:outline-none w-full h-10 pl-2 rounded-sm ${
                 errorMessage.phoneNumber ? "border-red-900" : ""
@@ -125,9 +125,9 @@ function FirstPage({ onNext, formValues, setFormValues, text }) {
               onChange={handleChange}
               value={formValues.phoneNumber}
             />
-            {errorMessage.phoneNum && (
+            {errorMessage.phoneNumber && (
               <span className="text-red-900 font-bold">
-                {errorMessage.phoneNum}
+                {errorMessage.phoneNumber}
               </span>
             )}
           </div>
